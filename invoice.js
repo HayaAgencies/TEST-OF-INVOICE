@@ -196,7 +196,7 @@ function getrate(v)
         
         var rate = data
         $.each(rate, function(key,value){
-            document.getElementsByName("rate")[index].value = value;
+            document.getElementsByName("rate")[index].value = value[1];
         })
        }
     })
