@@ -182,19 +182,19 @@ function itemdata(v)
 function getrate(v)
 {
   var no = $("#item").val()
-  $.getJSON("https://"+appsscriptpage+"?page=search&no="+no,
-  function(data) {
-    if(data == "not found"){
-      alert("noo")
-    }
-    else{
-      var record = data;
-      var index = $(v).parent().parent().index();
-      $.each(record, function(key, value)
-      {
-        document.getElementsByName("item_nm")[index].value = value[1]
-        document.getElementsByName("rate")[index].value = value[2]
-      })
-    }
-  })
+   jQuery.getJSON("https://script.google.com/macros/s/AKfycbyzZ37KjW-8tXFRQScsqa65zMwyke-xNapX7_EhfbTraUro_EwCTxjEngWDQcObD9m_NA/exec?page=search&no="+no,
+    function(data){
+       if(data == "NOT FOUND")
+       {
+        alert("This Item Is Not In That Sheet")
+       }
+       else
+       {
+        var index = $(v).parent().parent().index();
+        var rate = data
+        $.each(rate, function(key,value){
+            document.getElementsByName("rate")[index].value = value;
+        })
+       }
+    })
 }
