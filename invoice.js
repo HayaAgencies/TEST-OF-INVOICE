@@ -181,7 +181,8 @@ function itemdata(v)
 }
 function getrate(v)
 {
-  var no = $("#item").val()
+    var index = $(v).parent().parent().index();
+  var no = $("#item")[index].value;
    jQuery.getJSON("https://script.google.com/macros/s/AKfycbyzZ37KjW-8tXFRQScsqa65zMwyke-xNapX7_EhfbTraUro_EwCTxjEngWDQcObD9m_NA/exec?page=search&no="+no,
     function(data){
        if(data == "NOT FOUND")
@@ -190,7 +191,7 @@ function getrate(v)
        }
        else
        {
-        var index = $(v).parent().parent().index();
+        
         var rate = data
         $.each(rate, function(key,value){
             document.getElementsByName("rate")[index].value = value;
