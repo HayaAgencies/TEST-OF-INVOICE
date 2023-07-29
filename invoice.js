@@ -182,8 +182,10 @@ function itemdata(v)
 function getrate(v)
 {
     var index = $(v).parent().parent().index();
-  var no = $("#item")[index].value;
-   jQuery.getJSON("https://script.google.com/macros/s/AKfycbyzZ37KjW-8tXFRQScsqa65zMwyke-xNapX7_EhfbTraUro_EwCTxjEngWDQcObD9m_NA/exec?page=search&no="+no,
+    alert(index)
+    var no = document.getElementsByName("item_nm")[index].value;
+    alert(no)
+    jQuery.getJSON("https://script.google.com/macros/s/AKfycbyzZ37KjW-8tXFRQScsqa65zMwyke-xNapX7_EhfbTraUro_EwCTxjEngWDQcObD9m_NA/exec?page=search&no="+no,
     function(data){
        if(data == "NOT FOUND")
        {
