@@ -185,7 +185,7 @@ function getrate(v)
     alert(index)
     var no = document.getElementsByName("item_nm")[index].value;
     alert(no)
-    jQuery.getJSON("https://script.google.com/macros/s/AKfycbxgjBECaxM3hDFOuRs95CdyouapYBhCtXVyCg-lEC_V3Gdnoav-k692WW1H7BbXQU3z/exec?page=search&no="+no,
+    jQuery.getJSON("https://script.google.com/macros/s/AKfycbwkTb0hlDDlHPSa9wYq0Uj5Z84QYp0AJ7F_ILxqzXwB_jMRUe-xD603FjkkSUcmYubddw/exec?page=search&no="+no,
     function(data){
        if(data == "NOT FOUND")
        {
