@@ -1,4 +1,4 @@
-var appsscriptpage = "script.google.com/macros/s/AKfycbxOqqkbJMyd-2zgw8MA4jsVtuf5I_iUsQ5ojHCpbNBFoeD8jtapPC3RiyoW21aNcQn11w/exec"
+var appsscriptpage = "AKfycbyc8hvIoKKT94Xs2LCQGpxeD4i_MljtMcQjwrYSYRyIBwQi_w1m-I6FlOic3RmZHoxPHA"
 function GetPrint()
 {
     /*For Print*/
@@ -178,6 +178,7 @@ function itemdata(v)
   {
     document.getElementsByName("rate")[index].value =  Mayuri;
   }
+  GetTotal()
 }
 function getrate(v)
 {
@@ -185,7 +186,7 @@ function getrate(v)
     alert(index)
     var no = document.getElementsByName("item_nm")[index].value;
     alert(no)
-    jQuery.getJSON("https://script.google.com/macros/s/AKfycbwkTb0hlDDlHPSa9wYq0Uj5Z84QYp0AJ7F_ILxqzXwB_jMRUe-xD603FjkkSUcmYubddw/exec?page=search&no="+no,
+    jQuery.getJSON("https://script.google.com/macros/s/"+appsscriptpage+"/exec?page=rate&item="+no,
     function(data){
        if(data == "NOT FOUND")
        {
@@ -196,7 +197,7 @@ function getrate(v)
         
         var rate = data
         $.each(rate, function(key,value){
-            document.getElementsByName("rate")[index].value = value[1];
+            document.getElementsByName("rate")[index].value = value;
         })
        }
     })
