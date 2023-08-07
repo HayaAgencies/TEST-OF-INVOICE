@@ -1,4 +1,4 @@
-var appsscriptpage = "AKfycbyc8hvIoKKT94Xs2LCQGpxeD4i_MljtMcQjwrYSYRyIBwQi_w1m-I6FlOic3RmZHoxPHA"
+var appsscriptpage = "AKfycbw7mVnQoBZoajZRdara5DZX60fyEbhrZomZmFcIqXw4M-PMkGqFH8vTPoh21QV9wlzm"
 function GetPrint()
 {
     /*For Print*/
@@ -184,21 +184,14 @@ function getrate(v)
 {
     var index = $(v).parent().parent().index();
     alert(index)
-    var no = document.getElementsByName("item_nm")[index].value;
+    var no = $(v).val();
     alert(no)
-    jQuery.getJSON("https://script.google.com/macros/s/"+appsscriptpage+"/exec?page=rate&item="+no,
+    $.getJSON("https://script.google.com/macros/s/"+appsscriptpage+"/exec?page=search&no="+no,
     function(data){
-       if(data == "NOT FOUND")
-       {
-        alert("This Item Is Not In That Sheet")
-       }
-       else
-       {
-        
-        var rate = data
-        $.each(rate, function(key,value){
-            document.getElementsByName("rate")[index].value = value;
-        })
-       }
+      if(data > 0)
+      {
+        document.getElementsByName("rate")[index].value = data;
+        Calc(v)
+      }      
     })
 }
