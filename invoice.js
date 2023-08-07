@@ -186,7 +186,7 @@ function getrate(v)
     alert(index)
     var no = $(v).val();
     alert(no)
-    $.getJSON("https://script.google.com/macros/s/"+appsscriptpage+"/exec?page=search&no="+no,
+    $.getJSON("https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/exec?page=search&no="+no,
     function(data){
       if(data > 0)
       {
