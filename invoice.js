@@ -1,3 +1,4 @@
+var Appsscript = "https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/";
 
 function GetPrint()
 {
@@ -66,7 +67,7 @@ $(document).ready(function () {
 
 function FillDataList()
 {
-        $.getJSON("https://script.google.com/macros/s/AKfycbznmBRZdKIKDjKYsTNN63Clu9KsIkVqM0TEXmOtog7WIpRkL2fIuK9cYhW3d7CCL1qYgw/exec?page=dropdown", 
+        $.getJSON(Appsscript+"exec?page=dropdown", 
         function (data) {                              //01
           var Options="";                              
           $.each(data, function(key, value)            //02
@@ -184,7 +185,7 @@ function getrate(v)
     var index = $(v).parent().parent().index();
     
     var no = $(v).val();
-    $.getJSON("https://script.google.com/macros/s/AKfycbwF6ckQ1Q-coiP45ZCFgzY_Hw-A4bLTv_Td42QyZ5vqTn5W8C1ZamxwbeA9HJsqOR56VQ/exec?page=search&no="+no,
+    $.getJSON(Appsscript+"exec?page=search&no="+no,
     function(data){
       if(data > 0)
       {
