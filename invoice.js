@@ -9,9 +9,11 @@ function GetPrint()
 function BtnAdd()
 {
     /*Add Button*/
+    var b = $("#db")
     var v = $("#TRow").clone().appendTo("#TBody") ;
     $(v).find("input").val('');
     $(v).removeClass("d-none");
+    $(b).removeClass("invisible")
     $(v).find("th").first().html($('#TBody tr').length - 1);
 }
 
